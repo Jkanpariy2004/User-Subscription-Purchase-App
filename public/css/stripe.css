@@ -1,0 +1,42 @@
+#stripeModal .modal-content {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#stripeModal .modal-header {
+    border-bottom: none;
+    text-align: center;
+}
+
+#stripeModal .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#stripeModal #card-element {
+    background: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#stripeModal #card-errors {
+    font-size: 0.875rem;
+    color: #dc3545;
+    margin-top: 5px;
+}
+
+#stripeModal .btn-primary {
+    background: #007bff;
+    border: none;
+}
+
+#stripeModal .btn-primary:hover {
+    background: #0056b3;
+}
+
+#stripeModal .btn-secondary {
+    border-radius: 5px;
+}
