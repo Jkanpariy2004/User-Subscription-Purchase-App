@@ -56,4 +56,15 @@ class AuthController extends Controller
     {
         return view('dashboard');
     }
+
+    public function logout()
+    {
+        try {
+            Auth::logout();
+
+            return redirect()->route('login')->with('success', 'Logout Successfully.');
+        } catch (\Exception $e) {
+            return redirect()->route('login')->with('error', $e->getMessage());
+        }
+    }
 }

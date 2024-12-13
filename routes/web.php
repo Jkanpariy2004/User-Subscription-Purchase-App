@@ -19,4 +19,6 @@ Route::middleware(['userAuth'])->group(function () {
 Route::middleware(['isAuthenticate'])->group(function () {
     Route::get('/subscription', [SubscriptionController::class, 'LoadSubscription'])->name('subscription');
     Route::post('/get-plan-details',[SubscriptionController::class,'getPlanDetails'])->name('getPlanDetails');
+
+    Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 });
