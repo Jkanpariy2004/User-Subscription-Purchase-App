@@ -127,6 +127,39 @@
                     displayError.textContent = '';
                 }
             });
+
+            var submitButton = document.getElementById('buyPlanSubmitBtn');
+
+            submitButton.addEventListener('click', function(ev) {
+                stripe.createToken(card).then(function(result) {
+                    if (result.error) {
+                        var errorElement = document.getElementById('card-errors');
+                        errorElement.textContent = result.error.message
+                    } else {
+                        createSubscription(result.token);
+                    }
+                });
+            });
+        }
+
+        function createSubscription(token) {
+            var pla_id = $('#planId').val();
+
+            $.ajax({
+                type: "POST",
+                url: "{{ route('createSubscription') }}",
+                data: {
+                    data: token,
+                    _token: "{{ csrf_token() }}"
+                },
+                success: function(response) {
+                    if (response.success) {
+                        console.log(response);
+                    } else {
+                        alert("Error");
+                    }
+                }
+            });
         }
     </script>
 @endpush
