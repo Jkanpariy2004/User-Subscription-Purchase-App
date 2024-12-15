@@ -27,6 +27,7 @@ class SubscriptionDetails extends Model
         'trial_end',
         'status',
         'cancel',
+        'canceled_at',
         'created_at',
         'updated_at',
     ];
