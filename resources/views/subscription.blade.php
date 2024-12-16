@@ -143,18 +143,19 @@
         }
 
         function createSubscription(token) {
-            var pla_id = $('#planId').val();
+            var plan_id = $('#planId').val();
 
             $.ajax({
                 type: "POST",
                 url: "{{ route('createSubscription') }}",
                 data: {
                     data: token,
+                    plan_id: plan_id,
                     _token: "{{ csrf_token() }}"
                 },
                 success: function(response) {
                     if (response.success) {
-                        console.log(response);
+                        alert(response.msg);
                     } else {
                         alert("Error");
                     }
